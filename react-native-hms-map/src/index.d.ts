@@ -1,12 +1,12 @@
 /*
  * Copyright 2020-2024. Huawei Technologies Co., Ltd. All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      https://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -19,7 +19,6 @@ declare module "@hmscore/react-native-hms-map" {
   import { NativeSyntheticEvent, ViewProps } from "react-native";
 
   export enum PatternItemTypes {
-
     /**
      * Dash used in the stroke pattern for a polyline or the outline of a polygon or circle.
      */
@@ -33,11 +32,10 @@ declare module "@hmscore/react-native-hms-map" {
     /**
      * Gap used in the stroke pattern for a polyline or the outline of a polygon or circle.
      */
-    GAP = 2
+    GAP = 2,
   }
-  
-  export enum CapTypes {
 
+  export enum CapTypes {
     /**
      * Defines a cap that is squared off exactly at the start or end vertex of a polyline.
      */
@@ -56,14 +54,13 @@ declare module "@hmscore/react-native-hms-map" {
     /**
      * Customizes the cap style for a polyline by using custom bitmap image and width.
      */
-    CUSTOM = 3
+    CUSTOM = 3,
   }
-  
+
   /**
    * Joint types for a polyline or the outline of a polygon.
    */
   export enum JointTypes {
-
     /**
      * Default type.
      */
@@ -77,14 +74,13 @@ declare module "@hmscore/react-native-hms-map" {
     /**
      * Round.
      */
-    ROUND = 2
+    ROUND = 2,
   }
-  
+
   /**
    * Type of the map.
    */
   export enum MapTypes {
-
     /**
      * Empty grid map.
      */
@@ -98,11 +94,10 @@ declare module "@hmscore/react-native-hms-map" {
     /**
      * Terrain map.
      */
-    TERRAIN = 3
+    TERRAIN = 3,
   }
-  
-  export enum Reason {
 
+  export enum Reason {
     /**
      * Animation started in response to user gestures on a map.
      */
@@ -116,11 +111,10 @@ declare module "@hmscore/react-native-hms-map" {
     /**
      * Animation that you started.
      */
-    DEVELOPER_ANIMATION = 3
+    DEVELOPER_ANIMATION = 3,
   }
 
   export enum RadiusUnit {
-
     /**
      * Unit: pixel.
      */
@@ -129,11 +123,10 @@ declare module "@hmscore/react-native-hms-map" {
     /**
      * Unit: meter.
      */
-    METER = "METER"
+    METER = "METER",
   }
-  
+
   export enum FillMode {
-    
     /**
      * The last frame is displayed after the animation ends.
      */
@@ -142,13 +135,17 @@ declare module "@hmscore/react-native-hms-map" {
     /**
      * The first frame is displayed after the animation ends.
      */
-    BACKWARDS = 1 
+    BACKWARDS = 1,
   }
 
-  type FillModeEnum = `${Extract<FillMode, number>}` extends `${infer N extends number}` ? N : never;
-  
-  export enum RepeatMode { 
+  type FillModeEnum = `${Extract<
+    FillMode,
+    number
+  >}` extends `${infer N extends number}`
+    ? N
+    : never;
 
+  export enum RepeatMode {
     /**
      * The animation is replayed from the start after it ends.
      */
@@ -157,11 +154,16 @@ declare module "@hmscore/react-native-hms-map" {
     /**
      * The animation is replayed from the end in reverse order after it ends.
      */
-    REVERSE = 2
+    REVERSE = 2,
   }
 
-  type RepeatModeEnum = `${Extract<RepeatMode, number>}` extends `${infer N extends number}` ? N : never;
-  
+  type RepeatModeEnum = `${Extract<
+    RepeatMode,
+    number
+  >}` extends `${infer N extends number}`
+    ? N
+    : never;
+
   export enum Interpolator {
     LINEAR = 0,
     ACCELERATE = 1,
@@ -175,8 +177,13 @@ declare module "@hmscore/react-native-hms-map" {
     LINEAR_OUT_SLOW_IN = 9,
   }
 
-  type InterpolatorEnum = `${Extract<Interpolator, number>}` extends `${infer N extends number}` ? N : never;
-  
+  type InterpolatorEnum = `${Extract<
+    Interpolator,
+    number
+  >}` extends `${infer N extends number}`
+    ? N
+    : never;
+
   export enum Hue {
     RED = 0,
     ORANGE = 30,
@@ -187,16 +194,18 @@ declare module "@hmscore/react-native-hms-map" {
     BLUE = 240,
     VIOLET = 270,
     MAGENTA = 300,
-    ROSE = 330
-  };
+    ROSE = 330,
+  }
 
-  type HueEnum = `${Extract<Hue, number>}` extends `${infer N extends number}` ? N : never;
-  
+  type HueEnum = `${Extract<Hue, number>}` extends `${infer N extends number}`
+    ? N
+    : never;
+
   export enum Gravity {
     TOP = 48,
     BOTTOM = 80,
     START = 8388611,
-    END = 8388613
+    END = 8388613,
   }
 
   /**
@@ -485,18 +494,18 @@ declare module "@hmscore/react-native-hms-map" {
     path?: string;
 
     /**
-    *  Creates object using the uri of the image resource.
-    */
+     *  Creates object using the uri of the image resource.
+     */
     uri?: string;
 
     /**
-    *  Width of the image for images that we get from uri.
-    */
+     *  Width of the image for images that we get from uri.
+     */
     width?: number;
 
     /**
-    *  Height of the image for images that we get from uri.
-    */
+     *  Height of the image for images that we get from uri.
+     */
     height?: number;
   }
 
@@ -658,7 +667,7 @@ declare module "@hmscore/react-native-hms-map" {
   }
 
   /**
-   * Default options for common fields in all animation types. 
+   * Default options for common fields in all animation types.
    */
   export interface DefaultAnimationOptions {
     duration?: number;
@@ -688,7 +697,7 @@ declare module "@hmscore/react-native-hms-map" {
   /**
    *  Events triggered by the map.
    */
-  export interface MapEvent<T = {}> extends NativeSyntheticEvent<T> { }
+  export interface MapEvent<T = {}> extends NativeSyntheticEvent<T> {}
 
   /**
    *  Props for <HMSCircle> component.
@@ -761,8 +770,7 @@ declare module "@hmscore/react-native-hms-map" {
   /**
    *  React component that shows a circle object on the map.
    */
-  export class HMSCircle extends React.Component<HMSCircleProps, any> { 
-
+  export class HMSCircle extends React.Component<HMSCircleProps, any> {
     /**
      *  Starts circle animation.
      */
@@ -776,7 +784,10 @@ declare module "@hmscore/react-native-hms-map" {
     /**
      * Sets the circle animation
      */
-    setAnimation(circleAnimation: CircleAnimation, defaultAnimationOptions: DefaultAnimationOptions): void;
+    setAnimation(
+      circleAnimation: CircleAnimation,
+      defaultAnimationOptions: DefaultAnimationOptions
+    ): void;
   }
 
   /**
@@ -861,7 +872,7 @@ declare module "@hmscore/react-native-hms-map" {
    *  A polygon can be convex or concave. It can span
    *  the 180 meridian and have holes that are not filled in.
    */
-  export class HMSPolygon extends React.Component<HMSPolygonProps, any> { }
+  export class HMSPolygon extends React.Component<HMSPolygonProps, any> {}
 
   /**
    *  Props for <HMSPolyline> component.
@@ -931,12 +942,12 @@ declare module "@hmscore/react-native-hms-map" {
      * true: yes
      * false (default): no
      */
-    gradient?: boolean
+    gradient?: boolean;
 
     /**
      *  Colors of different segments of a polyline, in ARGB format.
      */
-    ColorValues?:number[]
+    ColorValues?: number[];
 
     /**
      *  Event listener for clicks on the polyline.
@@ -949,7 +960,7 @@ declare module "@hmscore/react-native-hms-map" {
    *  vertices where line segments are drawn between consecutive
    *  vertices, on the map.
    */
-  export class HMSPolyline extends React.Component<HMSPolylineProps, any> { }
+  export class HMSPolyline extends React.Component<HMSPolylineProps, any> {}
 
   /**
    *  Props for <HMSMarker> component.
@@ -1037,8 +1048,8 @@ declare module "@hmscore/react-native-hms-map" {
     clickable?: boolean;
 
     /**
-    *  Whether the animation does the default action on marker click.
-    */
+     *  Whether the animation does the default action on marker click.
+     */
     defaultActionOnClick?: boolean;
 
     /**
@@ -1115,14 +1126,16 @@ declare module "@hmscore/react-native-hms-map" {
     /**
      * Sets the marker animation
      */
-    setAnimation(markerAnimation: MarkerAnimation, defaultAnimationOptions: DefaultAnimationOptions): void;
-
+    setAnimation(
+      markerAnimation: MarkerAnimation,
+      defaultAnimationOptions: DefaultAnimationOptions
+    ): void;
   }
 
   /**
    *  React component that shows information window on a marker
    */
-  export class HMSInfoWindow extends React.Component<ViewProps, any> { }
+  export class HMSInfoWindow extends React.Component<ViewProps, any> {}
 
   export interface LatLngWithSize extends LatLng {
     /**
@@ -1200,7 +1213,10 @@ declare module "@hmscore/react-native-hms-map" {
    *  React component that shows a ground overlay object, an image
    *  that is fixed to the map.
    */
-  export class HMSGroundOverlay extends React.Component<HMSGroundOverlayProps, any> { }
+  export class HMSGroundOverlay extends React.Component<
+    HMSGroundOverlayProps,
+    any
+  > {}
 
   /**
    *  Props for <HMSTileOverlay> component.
@@ -1239,7 +1255,10 @@ declare module "@hmscore/react-native-hms-map" {
    *  React component that shows a tile overlay object,
    *  which is a set of images to be displayed on a map.
    */
-  export class HMSTileOverlay extends React.Component<HMSTileOverlayProps, any> {
+  export class HMSTileOverlay extends React.Component<
+    HMSTileOverlayProps,
+    any
+  > {
     /**
      *  Clears the cache of the tile overlay.
      */
@@ -1287,9 +1306,9 @@ declare module "@hmscore/react-native-hms-map" {
   }
 
   /**
-   *  
+   *
    */
-  export class HMSHeatMap extends React.Component<HMSHeatMapProps, any> { }
+  export class HMSHeatMap extends React.Component<HMSHeatMapProps, any> {}
 
   /**
    *  Padding on a map.
@@ -1342,7 +1361,6 @@ declare module "@hmscore/react-native-hms-map" {
    *  Props for <MapView> component.
    */
   export interface HMSMapProps extends ViewProps {
-
     /**
      * Sets whether to enable the dark mode. After the dark mode is enabled, popups displayed after the map logo is tapped, indoor map controls, and privacy agreement popups will be displayed in dark mode.
      */
@@ -1436,7 +1454,7 @@ declare module "@hmscore/react-native-hms-map" {
     buildingsEnabled?: boolean;
 
     /**
-     * Indicates whether to enable the traffic status layer. 
+     * Indicates whether to enable the traffic status layer.
      * The options are true (yes) and false (no).
      * The default value is false.
      */
@@ -1494,7 +1512,7 @@ declare module "@hmscore/react-native-hms-map" {
     markerClustering?: boolean;
 
     /**
-     * Sets the color of the default cluster marker. 
+     * Sets the color of the default cluster marker.
      * The color value is in ARGB format.
      */
     markerClusterColor?: number | number[];
@@ -1506,10 +1524,10 @@ declare module "@hmscore/react-native-hms-map" {
     markerClusterTextColor?: number | number[];
 
     /**
-     * Sets the icon of the custom cluster marker. 
+     * Sets the icon of the custom cluster marker.
      * If the bitmapDescriptor parameter is empty for the setMarkerClusterIcon method,
-     * the color, image, and text color of the cluster marker set using setMarkerClusterColor, 
-     * setMarkerClusterIcon, and setMarkerClusterTextColor will be cleared. 
+     * the color, image, and text color of the cluster marker set using setMarkerClusterColor,
+     * setMarkerClusterIcon, and setMarkerClusterTextColor will be cleared.
      * In this case, the default cluster marker style will be used.
      */
     markerClusterIcon?: BitmapDescriptor;
@@ -1534,7 +1552,7 @@ declare module "@hmscore/react-native-hms-map" {
 
     /**
      * Specifies whether a fixed screen center can be set for zooming.
-     * If the function is enabled, the map will be zoomed based on the passed fixed screen center. 
+     * If the function is enabled, the map will be zoomed based on the passed fixed screen center.
      */
     gestureScaleByMapCenter?: boolean;
 
@@ -1616,12 +1634,15 @@ declare module "@hmscore/react-native-hms-map" {
   }
 
   type HMSMapMethods = {
-
     /**
      *  Initializes the Map SDK. You can set the data routing location. The options for routePolicy are CN (China), DE (Germany), SG (Singapore), and RU (Russia).
      *  Sets the access token of the Map SDK.
      */
-    initializer(apiKey: String, routePolicy: String): Promise<void>;
+    initializer(
+      apiKey: String,
+      routePolicy?: "CN" | "DE" | "SG" | "RU",
+      accessToken?: String
+    ): Promise<void>;
 
     /**
      *  Obtains all attributes of the Huawei map object
@@ -1653,7 +1674,7 @@ declare module "@hmscore/react-native-hms-map" {
      *  Obtains the length of one pixel point on the map at the current zoom level.
      */
     getScalePerPixel(): Promise<number>;
-    
+
     /**
      *  Removes all circles, markers, polylines, and ground overlays
      *  from the map.
@@ -1699,7 +1720,7 @@ declare module "@hmscore/react-native-hms-map" {
       /**
        *  Desired zoom level of the camera.
        */
-      zoom?: number,
+      zoom?: number
     ): void;
 
     /**
@@ -1726,7 +1747,7 @@ declare module "@hmscore/react-native-hms-map" {
       /**
        *  Desired zoom level of the camera.
        */
-      height?: number,
+      height?: number
     ): void;
 
     /**
@@ -1741,7 +1762,7 @@ declare module "@hmscore/react-native-hms-map" {
       /**
        *  Number of pixels to scroll vertically.
        */
-      y: number,
+      y: number
     ): void;
 
     /**
@@ -1760,7 +1781,7 @@ declare module "@hmscore/react-native-hms-map" {
       /**
        *  Coordinates of a point to be set as the focus.
        */
-      focus?: Point,
+      focus?: Point
     ): void;
 
     /**
@@ -1770,7 +1791,7 @@ declare module "@hmscore/react-native-hms-map" {
       /**
        *  Desired zoom level.
        */
-      zoom: number,
+      zoom: number
     ): void;
 
     /**
@@ -1795,21 +1816,23 @@ declare module "@hmscore/react-native-hms-map" {
 
     /**
      * Gets the layer info about map layer objects
-     * @param ref Reference object 
+     * @param ref Reference object
      */
     getLayerInfo(ref: object): Promise<object>;
 
     /**
      * Gets the layer options info about map layer objects
-     * @param ref Reference object 
+     * @param ref Reference object
      */
     getLayerOptionsInfo(ref: object): Promise<object>;
-  }
+  };
 
   /**
    *  React component that shows a map.
    */
-  export default class HMSMap extends React.Component<React.PropsWithChildren<HMSMapProps>> {
+  export default class HMSMap extends React.Component<
+    React.PropsWithChildren<HMSMapProps>
+  > {
     static module: HMSMapMethods;
   }
 }
