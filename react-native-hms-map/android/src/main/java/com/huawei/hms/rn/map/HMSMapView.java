@@ -1411,11 +1411,14 @@ public class HMSMapView extends MapView implements UriIconView, OnMapReadyCallba
         }
 
         @ReactMethod
-        public void initializer(final String apiKey, final String routePolicy, final Promise promise) {
+        public void initializer(final String apiKey, final String routePolicy, final String accessToken, final Promise promise) {
             if (routePolicy != null && !routePolicy.isEmpty()) {
                 MapsInitializer.initialize(context, routePolicy);
             } else {
                 MapsInitializer.initialize(context);
+            }
+            if (setAccessToken != null && !setAccessToken.isEmpty()) {
+                MapsInitializer.setAccessToken(accessToken);
             }
             MapsInitializer.setApiKey(apiKey);
             promise.resolve(null);
